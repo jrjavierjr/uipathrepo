@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="G3LZyQz0xUq8ZsAabgJn0w" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="2234, 95, 161, 64" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Invoice Extraction' parentid='nav-mobile' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Invoice Extraction' parentid='nav-mobile' tag='A' type='' class='' check:text='Invoice Extraction' /&gt;" Guid="1cb7bf62-dc38-4019-a748-488993279785" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKUAAABECAYAAADgM/X9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD9SURBVHhe7dShTQRAFEXRX9jKzW4XKCQOQaAQNAXgUSRkGxsaGD9XHHHM0zdvLpfLgpK53m8LSjwlOaIkR5TkiJIcUZIjSnJESY4oyRElOaIkR5TkiJIcUZIjSnJESY4oyRElOaIkR5TkiJIcUZIjSnJESY4oyRElOaIkR5TkiJIcUZIjSnJESY4oyRElOaIkR5TkiJIcUZIjSnJESY4oyRElOaIkR5TkiJIcUZIjSnJESY4oyRElOaIkR5TkiJKcud5vC0pmnj4XpMzz14KUeflekDKvPwtS5u13Qcq8/y1ImY/HgpTtCCdtRzhpO8JJ2xFO2o5w0naEYx7rH2QwmlT1z6DnAAAAAElFTkSuQmCC" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Rpa Challenge' /&gt;" SearchSteps="FuzzySelector" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="34eb4c5c14d0a0d6943598bdd29c6af8.png" xmlns="">0IMvCZSb5FEaQDvTSScJVHg</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

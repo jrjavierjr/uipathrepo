@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="Zvf8soBHRki41dF_jTwWHg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="2104, 95, 130, 64" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Movie Search' parentid='nav-mobile' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Movie Search' parentid='nav-mobile' tag='A' type='' class='' check:text='Movie Search' /&gt;" Guid="b58dc163-4634-46a5-973b-63c7719caded" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIYAAABECAYAAABEWU0uAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADeSURBVHhe7d2hTQRQEEXRKWwlgS5QSByCQCFoCsCjSMg2Nvj9twOOOObpm7Ezl8tl4dbcPdwv3HIxSMIgCYMkDJIwSMIgCYMkDJIwSMIgCYMkDJIwSMIgCYMkDJIwSMIgCYMkDJIwSMIgCYMkDJIwSMIgCYMkDJIwSMIgCYMkDJIwSMIgCYMkDJIwSMIgCYMkDJIwSMIgCYMkDJIwSMIgCYMkDJIwSMIgCYMkDJJneaSZx4+Fwzx9Lhzm+WvhMC/fC4d5/Vk4zNvvwmHerwuHHCFHyBFyhBwhR/656/4Bz0rVwB7TEnYAAAAASUVORK5CYII=" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Rpa Challenge' /&gt;" SearchSteps="FuzzySelector" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="78907ba0b3e7d259517985cc27f38ecc.png" xmlns="">0FqQT_Eh660SZmzeIKl1zbw</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

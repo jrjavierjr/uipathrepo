@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Shortest Path",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "kcG5TXXGVEKWs3AjlNTaDw",
+  "Reference": "p1EvD9vpsUy_MQ6iaaaFaw/kcG5TXXGVEKWs3AjlNTaDw",
+  "ParentRef": "p1EvD9vpsUy_MQ6iaaaFaw/UeLn9KM9vUWglBH9xL2tyA",
+  "Created": "2025-04-18T06:07:11.3192702Z",
+  "Updated": "2025-04-18T06:07:11.3192702Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

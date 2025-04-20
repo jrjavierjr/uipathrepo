@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="m8ao3xF7QUiLsLdRZoEvjw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="rpachallenge.com" CVScreenId="f4593929-951e-4551-b444-3c6943368ddc" CvTextArea="1340, 267, 305, 40" CvType="AnyWordGroup" DesignTimeRectangle="656, 258, 1674, 54" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='DIV' type='' class='message1 teal-text text-darken-2' /&gt;" Guid="6d525274-aca7-4538-b89f-cc8af2716142" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Rpa Challenge' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="a5caa1a99f7e87e7d12a36e79d7173e6.png" xmlns="">0mBcikgM4R0Wudhoq1cw05w</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

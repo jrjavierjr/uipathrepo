@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="s1hsGMr8pU6Z60LyZdPdfw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="602, 893, 20, 36" DesignTimeScaleFactor="1" ElementType="Icon" FullSelectorArgument="&lt;webctrl tag='I' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='I' type='' class='material-icons right' aaname='cloud_download' check:text='cloud_download' /&gt;" Guid="23caa734-7f67-40f1-9efe-57084433d59b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAAoCAYAAADkDTpVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF6SURBVFhH7ZRRcoMwDER9jBbSezUkx0lIb00lLIEk1oh20pl+5ON1OqB9a4NJ6YfbpJwud2KE9HSvH3JirsQLLf5FAXoCTytoPd6nFKB5xRWgsKWuEuGlFipYB5HUggQZdEyxDIEEGaU73yYFSS1IkPH3BUjUAgkyXEFHPxd+R35XLnw12OsBU+DlM7YgHMcPElvsPctcoCuPK1ays75H3QF/A63vAMq3c9uZyvwl120+4AAGFeCSciIxy39WcJzS0582DwcvZkOYqayO8n6+TwvDSC9ciKHrFwm38HU3R3QkVs9c8LaUjKaEB1f6i8iseJYzKhYoyx6m6D+WZReKDRMboUUy6ipOwKuWgTh4lJivBfo4wk0GSfaIeSnALEF6N/yeMmwRw468gF/8gsg+AVxgZyV/bAcWLQmgWXbsFjjkICARsx4UnztYUMN6PFvUAl9yrEDCSGrRuVpUs3kBf/ZNgtQi+dLRz+yvsQtp8CpIeRWkvAoSxukbDzRpeMCS5t0AAAAASUVORK5CYII=" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Rpa Challenge' /&gt;" SearchSteps="FuzzySelector" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="ed137db409456c812176657a91a901f3.png" xmlns="">0kYO0Zb3kKEO7QQCyRhJy9Q</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="5eNuRw2qC0uIQ1AteiCaPQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="1974, 95, 130, 64" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Shortest Path' parentid='nav-mobile' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Shortest Path' parentid='nav-mobile' tag='A' type='' class='' check:text='Shortest Path' /&gt;" Guid="ddc27849-5a30-42a0-afe4-00850c468a9a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIYAAABECAYAAABEWU0uAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADeSURBVHhe7d2hTQRQEEXRKWwlgS5QSByCQCFoCsCjSMg2Nvj9twOOOObpm7Ezl8tl4dbcPdwv3HIxSMIgCYMkDJIwSMIgCYMkDJIwSMIgCYMkDJIwSMIgCYMkDJIwSMIgCYMkDJIwSMIgCYMkDJIwSMIgCYMkDJIwSMIgCYMkDJIwSMIgCYMkDJIwSMIgCYMkDJIwSMIgCYMkDJIwSMIgCYMkDJIwSMIgCYMkDJJneaSZx4+Fwzx9Lhzm+WvhMC/fC4d5/Vk4zNvvwmHerwuHHCFHyBFyhBwhR/656/4Bz0rVwB7TEnYAAAAASUVORK5CYII=" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Rpa Challenge' /&gt;" SearchSteps="FuzzySelector" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="cb7101a2c18f19f2149112867ccc5087.png" xmlns="">0qAgE1Owt2kiRE3PxI_FMjQ</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="is9GYlaQ9EGZIANcHtxNjg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="2395, 95, 158, 64" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='RPA Stock Market' parentid='nav-mobile' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='RPA Stock Market' parentid='nav-mobile' tag='A' type='' class='' check:text='RPA Stock Market' /&gt;" Guid="21855332-fc0c-4dba-b80c-eecdd6f015b6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKIAAABECAYAAAAC7+6EAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGOSURBVHhe7dgxahtBGIbhOYsQCCEdQaWxb5EqZQqBixB3OoMgtQ/gPlUgpNGxJsyahcWsA8sK5iue4mFh/ylf/oEpp9OpQm/l4emxQm82IhGESAQhEkGIRBAiEYRIBCESQYhEECIRhEgEIRJBiEQQIhGESAQhEkGIRBAiEYRIBCESQYhEECIRhMgq5/O5Xi6X2VlzvV7/Ox8JkVVaZLfbbTa2FmGbte/H2UdCZLW5GJdE2AiRu5jGuDTCRojczRjj0ggbIXI34yYcN+Pcmc8IkbuYXsfTa3ru7Bwhsto0wvHf0hiFyCpzEY6WxChEVmmRzUU4avP26D03mxIiEYRIBCESQYhEECIRhEgEIRJBiEQQIhGESAQhEkGIRBAiEYRIBCESQYhEECIRhEgEIRJBiEQQIhHKw9Njhd5K+fKzQi+bzWZQytfXCr1st9tBKd/eKvSy2+0GpTz/qtDLfr8flPL9d4VeDofDoJQffyr0cjweB6W8/K3QixCJIEQiCJEIQiSCEIkgRCK8h3is/wA3ZlTUfay2lQAAAABJRU5ErkJggg==" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Rpa Challenge' /&gt;" SearchSteps="FuzzySelector" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="6b7b6487bd09ae2ac890c1e6fc2aedbc.png" xmlns="">0mUdioj0wqkWIEJm_Qxzpmg</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

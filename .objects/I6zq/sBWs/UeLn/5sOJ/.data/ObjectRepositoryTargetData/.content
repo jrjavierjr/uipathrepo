@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="eIORTUBglUaUwo0bUmJJHw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="1856, 95, 118, 64" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl parentid='nav-mobile' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='nav-mobile' tag='A' type='' class='' aaname='Input Forms' check:text='Input Forms' /&gt;" Guid="dfbb564e-136d-43b7-8b18-a74f94097304" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHoAAABECAYAAABOKSE5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADmSURBVHhe7d2hTYVBEEbRKeyXBLpAIXEIAoWgKQD/FAl5jS0NbAV7jzjmszejZ67rWpxvHp4eF+dz0RFCRwgdIXSE0BFCRwgdIXSE0BFCRwgdIXSE0BFCRwgdIXSE0BFCRwgdIXSE0BFCRwgdIXSE0BFCRwgdIXSE0BFCRwgdIXSE0BFCRwgdIXSE0BFCRwgdIXSE0BFCRwgdIXSE0BFCRwgdIXSE0BFCRwgdIXSE5ykRM89fi4B5+V4EzOvPImDebouAef9dBMzH3yJgPu+LgO3IebYj59mOnGc7cp7tyHm2I4e5r3/bGR5ZeSq1TgAAAABJRU5ErkJggg==" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Rpa Challenge' /&gt;" SearchSteps="FuzzySelector" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="bd392d908dbcd886c2dc957a95e539af.png" xmlns="">0Qun156NaBkWKrHoVGiSXTw</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

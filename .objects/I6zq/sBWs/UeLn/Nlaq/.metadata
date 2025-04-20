@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Invoice Extraction",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "NlaqVxQeZkygC6ULxxLAhQ",
+  "Reference": "p1EvD9vpsUy_MQ6iaaaFaw/NlaqVxQeZkygC6ULxxLAhQ",
+  "ParentRef": "p1EvD9vpsUy_MQ6iaaaFaw/UeLn9KM9vUWglBH9xL2tyA",
+  "Created": "2025-04-18T06:07:11.3819461Z",
+  "Updated": "2025-04-18T06:07:11.3819461Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

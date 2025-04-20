@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="OFz_kvB5AU653tgHWZHdIA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="491, 168, 79, 36" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname=' EN ' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' EN ' tag='A' type='' class='dropdown-button btn uiColorPrimary ' check:text='EN' /&gt;" Guid="0bb385a1-6a95-4703-b24d-e0097fdc6e70" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFMAAAAoCAYAAACCV8YCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB0SURBVGhD7cgxEQAgDMDA6kYexoqBTDnGDL/8zLmbTzDjYMbBjIMZBzMOZhzMOJhxMONgxsGMgxkHMw5mHMw4mHEw42DGwYyDGQczDmYczDiYcTDjYMbBjIMZBzMOZhzMOJhxMONgxsGMgxkHMw5mHMwIdx/enO7NJGfGOQAAAABJRU5ErkJggg==" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Rpa Challenge' /&gt;" SearchSteps="FuzzySelector" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="3ddda2062fee02dc68bd83211cca484a.png" xmlns="">0Pr5lk3H9V0eDCVcfYTjAvQ</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
