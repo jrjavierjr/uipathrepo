@@ -307,7 +307,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uta:VerifyControlAttribute AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" sap2010:Annotation.AnnotationText="Validate word &quot;Congratulations!&quot;" ContinueOnFailure="True" DisplayName="Verify Control Attribute" sap:VirtualizedContainerService.HintSize="534,280" sap2010:WorkflowViewState.IdRef="VerifyControlAttribute_4" Operator="Equality" OutputArgument="Value" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+      <uta:VerifyControlAttribute AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" sap2010:Annotation.AnnotationText="Validate word &quot;Congratulations!&quot; is visible" ContinueOnFailure="True" DisplayName="Verify Control Attribute" sap:VirtualizedContainerService.HintSize="534,280" sap2010:WorkflowViewState.IdRef="VerifyControlAttribute_4" Operator="Equality" OutputArgument="Value" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
         <uta:VerifyControlAttribute.ActivityToTest>
           <ActivityAction>
             <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Congratulations!" sap:VirtualizedContainerService.HintSize="500,107" sap2010:WorkflowViewState.IdRef="GetValue_1">
