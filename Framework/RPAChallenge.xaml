@@ -50,6 +50,7 @@
       <x:String>UiPath.UIAutomationNext.Contracts</x:String>
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
       <x:String>System.Numerics</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -109,9 +110,13 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="RPA_Challenge" sap:VirtualizedContainerService.HintSize="1916,5938" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="RPA_Challenge" sap:VirtualizedContainerService.HintSize="1916,8020" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="boolSubmitButtonExist" />
     </Sequence.Variables>
@@ -152,13 +157,13 @@
         </Sequence>
       </If.Else>
     </If>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Screen RPA Challenge" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="538,5017" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="c44e0e54-2b7c-4ab5-9f05-5472dceca279" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Screen RPA Challenge" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="538,7099" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="c44e0e54-2b7c-4ab5-9f05-5472dceca279" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="504,4777" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="504,6859" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Int32" Default="0" Name="intCounter" />
             </Sequence.Variables>
@@ -184,13 +189,17 @@
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dtExcelFile]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="470,4147" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dtExcelFile]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="470,6229" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="468,3967" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="468,6049" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:Boolean" Name="boolPhoneNumberValid" />
+                      <Variable x:TypeArguments="x:Boolean" Name="boolEmailAddressValid" />
+                    </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -315,50 +324,160 @@
                         </uix:VerifyExecutionTypeIntoOptions>
                       </uix:NTypeInto.VerifyOptions>
                     </uix:NTypeInto>
-                    <ui:LogMessage DisplayName="Log Message Input Email" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Input Email&quot;]" />
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Email'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,286" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="c44e0e54-2b7c-4ab5-9f05-5472dceca279" Text="[CurrentRow(&quot;Email&quot;).ToString]" Version="V4">
-                      <uix:NTypeInto.Target>
-                        <uix:TargetAnchorable CVScreenId="ae539b48-a95f-4489-92cf-c730fbe9a055" ContentHash="oeeCmxn_L0ywiytC0R3e2w" CvTextArea="754, 531, 34, 12" CvTextArgument="Email" CvType="Text" DesignTimeRectangle="756, 496, 558, 46" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='OzlGm' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='OzlGm' tag='INPUT' type='' class='ng-untouched ng-pristine ng-invalid' aaname='' /&gt;" Guid="f944a88d-d08a-4c57-ba75-b6be7ae05b05" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAjIAAAAyCAYAAABGUzFwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKtSURBVHhe7dpha9tWFIDh/f8fISIaFhrDmLuAwOCSMlFDWGhG1g5/MJiZirlkjKSQkpFyJsVKFpeNLUFhHHgeOOaKK+vzi66+CgCApIQMAJCWkAEA0hIyAEBaQgYASEvIAABpCRkAIC0hAwCkJWQAgLSEDACQlpABANK6C5miKIwxxhhjUswtb2QAgLSEDACQlpABANISMgBAWkIGAEhLyAAAaQkZACAtIQMApCVkAIC0hAwAkJaQAQDSEjIAQFpCBgBIS8gAAGkJGQAgLSEDAKQlZACAtIQMAJCWkAEA0hIyAEBaQgYASEvIAABpCRkAIC0hAwCkJWQAgLSEDACQ1v8TMn9cx3W/BAB4rLuQufp1Hqc/nd6bVfze7w1rHfXzIkazs3a9iOnX0/YXAODh7kJm/XoU5f5BTCaTfo6j6feGdtksornsVu+iKqr2FwDg4bZCZvR63V/dcz6P+vt5rJdHMa2qqCaHcXJTIZfRvDmM6sU4qpdHsfy4uf3G54tYHk03QfTqJJqPqzie1DE/32w3x5M4ft+thAwA8Hj/HjIfZjHaKWL3u6NY/XYWqzeT2NsZxaQax7gNnOa8ifl0FMWzaSw+d39Yx2y/iPLbOk5/OYtmXsf4eRllMYrZh5snxruqiOrnm5WQAQAe7R+Plur5xWajC5ly0kfKxmJaRvHiJK766y5e6jZWpt3HLotplHuHsbp3f7yvY0/IAAAD2wqZvVfLuDi/2MxtpXQhsz9rU+Uv3b1FtZ0ft3Hyd3ubYBEyAMCw/tvR0gNC5urH8Rdva1qfTmIsZACAgQ0eMvHpNA52yqje9kdT3Ye/L9v7hQwAMLCtkCmK4t70gfHQkGldLuv4pmyf8Ww3ynI3xj/UcSBkAICB3YXMU7i+2jpgAgAY1JOGDADA04n4E+A8j4fovWUaAAAAAElFTkSuQmCC" InformativeScreenshot="fa485e30b60ff4e0aed3b02a299c41a0.png" Reference="p1EvD9vpsUy_MQ6iaaaFaw/zaR-wnRIQ0qBtHeEDcaxyQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Rpa Challenge' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
-                          <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                              <uix:Target CVScreenId="ae539b48-a95f-4489-92cf-c730fbe9a055" CvElementArea="752, 466, 565, 40" CvType="InputBox" DesignTimeRectangle="756, 477, 32, 17" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Email' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Email' tag='LABEL' type='' class='' check:text='Email' /&gt;" Guid="e2793f03-1c84-4c61-a21f-44c2aad0c8ad" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACQAAAAVCAYAAAAuJkyQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAsSURBVEhL7c4xAQAgAAQh+5d+G3irAyTg7DNCRagIFaEiVISKUBEqQkXobbttP8TW4ZrajwAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, CV" />
-                            </scg:List>
-                          </uix:TargetAnchorable.Anchors>
-                        </uix:TargetAnchorable>
-                      </uix:NTypeInto.Target>
-                      <uix:NTypeInto.VerifyOptions>
-                        <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
-                          <uix:VerifyExecutionTypeIntoOptions.Retry>
-                            <InArgument x:TypeArguments="x:Boolean" />
-                          </uix:VerifyExecutionTypeIntoOptions.Retry>
-                          <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                            <InArgument x:TypeArguments="x:Double" />
-                          </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                        </uix:VerifyExecutionTypeIntoOptions>
-                      </uix:NTypeInto.VerifyOptions>
-                    </uix:NTypeInto>
-                    <ui:LogMessage DisplayName="Log Message Input Phone Number" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Input Phone Number&quot;]" />
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Phone Number'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,286" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="c44e0e54-2b7c-4ab5-9f05-5472dceca279" Text="[CurrentRow(&quot;Phone Number&quot;).ToString]" Version="V4">
-                      <uix:NTypeInto.Target>
-                        <uix:TargetAnchorable CVScreenId="ae539b48-a95f-4489-92cf-c730fbe9a055" ContentHash="NaiJ0nu8rkqJnBqyuR6F6Q" CvTextArea="755, 442, 90, 12" CvTextArgument="Phone Number" CvType="Text" DesignTimeRectangle="756, 408, 558, 46" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='mBFI4' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='mBFI4' tag='INPUT' type='' class='ng-untouched ng-pristine ng-invalid' aaname='' /&gt;" Guid="c0aa6938-1847-4828-9730-423cd17e0393" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAjIAAAAyCAYAAABGUzFwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAVISURBVHhe7dtxa9tGAIbxff8PIXJYRCzuvDn1EGg4OMTEIGrq4SbFpaYhJqbp3LnxIMUh4d2dJTmyk6YrSdbc9vxAYPki+eR//HBSfhAAAICnCBkAAOAtQgYAAHiLkAEAAN4iZAAAgLcIGQAA4C1CBgAAeIuQAQAA3iJkAACAtwgZAADgrWXIBEHAxsbGxsbGxubFVmBFBgAAeIuQAQAA3iJkAACAtwgZAADgLUIGAAB4i5ABAADeImQAAIC3CBkAAOAtQgYAAHiLkAEAAN4iZAAAgLcIGQAA4C1CBgAAeIuQAQAA3iJkAACAtwgZAADgLUIGAAB4i5ABAADeImQAAIC3CBkAAOAtQgYAAHiLkAEAAN4iZAAAgLcIGQAA4C1CBgAAeIuQAQAA3iJkAACAt5YhM38/UP9VP9sGI03OL/MRafKirvqLSb73/UyP+zr6M98pfBqp/+ZU83z3IT2V6wYAALdbhszpflVmq6EkSewWqxYaVdPT5Vh1P3v9PR3GgYJKU8Or/A3ndaxgq6PHmN1TuW4AAHC7lZBZ+dF+31ZkbDTYl9nYkcYvW4q364p3Uh39lf1ZYXbSU2sRQYlaL8eaFbFxNlB771Djd6macV31uKn03SwfzFz+0V8e20yPro9d40KmumWDq+lmlSuFzLibqD0on3umwV6i7km258a7x1Md7iaK41jN/YGm7rP+HKizY+e2bef+aqJiLar4TmZu7ov5tdQ7WZ27Libq2/MtAnDteyl/njsvAAB4WHeHzEaigX3pxoKNUI10pMnHkXpJtLIyMu3W7X7dRsRYk+O+2r8YBc/SbJXkQ0fVjUDh81SjjxONXib2vEZFi8zfJDL5sbPi3F9YYXEhEx+M1IoitUb5m6WQWYTOygrKqTpb9pjX2d5iRWejqqb7rLENLDtP8zxR41mi3vHEzj1VoxKo9mK6+Ht33aENp+qvHQ3Hdu6v2qrb8Xo3G9fngZKKUX1voPFZcW1VdT5kw+7zTFhVzQbO4P1j3PwCAOD/bSVkwjjNn5NJlUSBor2sFtyY+a20CiIbE5tFjAzVNKWwcK5cbOTjLmRMsnI7aLQb5qsqExsaRsnb7P2Mi4/r0ClbhIyLklFLUdTSyJ3zG0OmluYR4px1VQvC1bkfNBT83JVbd1kE3E+pSkdIb2145StVk87695J/V/nkb84HAAA8pFufkWnu9zQ4nt64xXKtFAguVIJYh9nA0vJH3I2vrbAsAiF2RxwqDtyqRahw83ozG/bYcnDkliFjjXYjRbu2QL4xZIrXGff51ysoC6X53rxuxx1TU/csO19gVuceVux7z7L4ufl5AADgIX351lLJnSHzuad6UFfvczaSmau3Haj++/wrIeNWdiK1hjPNzla384vsb8tWwmCx6mOP3W3cGTLtH+8XMusrLvqUqpaHm1tZilrDG3Of5f/xRcgAAPC47h8yNlr6z21A7Fw/pDs7iGWM/bF3cXNnyEjjvUjGvi6OvRy3Vd2oqfsp2y+7EQbuFlMQLENm5p7V2WprnEfQ+Ws7Dzt+n5Bxz9S0x/na1NXMnsMs5rt44uWkrahir7N4wPdirLb9XopnbAgZAAAe1wOEjGV/wNPt0P7oG4XGhsVmQ2nx4/+VkNHVVIfuAV937KaNBFNV8+15NrbmtjAYNs0yZNy5enE+j4rdtptq3HNFprrTU8dem6lkt7zC7XQZSs70wD3gG8i4W2LG2L8fqpg9IQMAwONahsyDuJprfsstoX/mUvOn/I89F/baSg8sr7t80pMHAOC/6WFDBgAA4F9EyAAAAE9JfwP8weXROZzz3wAAAABJRU5ErkJggg==" InformativeScreenshot="6f789df8b9c2c2e4153ecae1fb850e0d.png" Reference="p1EvD9vpsUy_MQ6iaaaFaw/viot6HjgYEy3Ias5IBO1pQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Rpa Challenge' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
-                          <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                              <uix:Target CVScreenId="ae539b48-a95f-4489-92cf-c730fbe9a055" CvElementArea="752, 379, 564, 38" CvType="InputBox" DesignTimeRectangle="756, 388, 89, 17" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Phone Number' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Phone Number' tag='LABEL' type='' class='' check:text='Phone Number' /&gt;" Guid="8cbfdc3d-d8d0-4be8-969c-98a5743ea524" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF0AAAAVCAYAAAAkeuLCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABDSURBVFhH7dAxAQAwEAOh+jeduvhbQAJvnJMekB6QHpAekB6QHpAekB6QHpAekB6QHpAekB6QHpAekB6QHpAekH5u+/clZz+XiQX8AAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, CV" />
-                            </scg:List>
-                          </uix:TargetAnchorable.Anchors>
-                        </uix:TargetAnchorable>
-                      </uix:NTypeInto.Target>
-                      <uix:NTypeInto.VerifyOptions>
-                        <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
-                          <uix:VerifyExecutionTypeIntoOptions.Retry>
-                            <InArgument x:TypeArguments="x:Boolean" />
-                          </uix:VerifyExecutionTypeIntoOptions.Retry>
-                          <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                            <InArgument x:TypeArguments="x:Double" />
-                          </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                        </uix:VerifyExecutionTypeIntoOptions>
-                      </uix:NTypeInto.VerifyOptions>
-                    </uix:NTypeInto>
+                    <ui:LogMessage DisplayName="Log Message Email If Valid" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Info" Message="[&quot;Check If Email is Valid&quot;]" />
+                    <ui:IsMatch sap2010:Annotation.AnnotationText="Check if Valid Email Address" BuilderPattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" DisplayName="Check if Valid Email Address RegEx" sap:VirtualizedContainerService.HintSize="434,123" sap2010:WorkflowViewState.IdRef="IsMatch_2" Input="[CurrentRow(&quot;Address&quot;).ToString]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" RegexOption="IgnoreCase, Compiled" Result="[boolEmailAddressValid]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:IsMatch>
+                    <If Condition="[boolEmailAddressValid]" DisplayName="If Valid Email Address" sap:VirtualizedContainerService.HintSize="434,1204" sap2010:WorkflowViewState.IdRef="If_5">
+                      <If.Then>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,512" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message Input Email" sap:VirtualizedContainerService.HintSize="382,175" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Input Email&quot;]" />
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Email'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,277" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="c44e0e54-2b7c-4ab5-9f05-5472dceca279" Text="[CurrentRow(&quot;Email&quot;).ToString]" Version="V4">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable CVScreenId="ae539b48-a95f-4489-92cf-c730fbe9a055" ContentHash="oeeCmxn_L0ywiytC0R3e2w" CvTextArea="754, 531, 34, 12" CvTextArgument="Email" CvType="Text" DesignTimeRectangle="756, 496, 558, 46" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='OzlGm' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='OzlGm' tag='INPUT' type='' class='ng-untouched ng-pristine ng-invalid' aaname='' /&gt;" Guid="f944a88d-d08a-4c57-ba75-b6be7ae05b05" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAjIAAAAyCAYAAABGUzFwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKtSURBVHhe7dpha9tWFIDh/f8fISIaFhrDmLuAwOCSMlFDWGhG1g5/MJiZirlkjKSQkpFyJsVKFpeNLUFhHHgeOOaKK+vzi66+CgCApIQMAJCWkAEA0hIyAEBaQgYASEvIAABpCRkAIC0hAwCkJWQAgLSEDACQlpABANK6C5miKIwxxhhjUswtb2QAgLSEDACQlpABANISMgBAWkIGAEhLyAAAaQkZACAtIQMApCVkAIC0hAwAkJaQAQDSEjIAQFpCBgBIS8gAAGkJGQAgLSEDAKQlZACAtIQMAJCWkAEA0hIyAEBaQgYASEvIAABpCRkAIC0hAwCkJWQAgLSEDACQ1v8TMn9cx3W/BAB4rLuQufp1Hqc/nd6bVfze7w1rHfXzIkazs3a9iOnX0/YXAODh7kJm/XoU5f5BTCaTfo6j6feGdtksornsVu+iKqr2FwDg4bZCZvR63V/dcz6P+vt5rJdHMa2qqCaHcXJTIZfRvDmM6sU4qpdHsfy4uf3G54tYHk03QfTqJJqPqzie1DE/32w3x5M4ft+thAwA8Hj/HjIfZjHaKWL3u6NY/XYWqzeT2NsZxaQax7gNnOa8ifl0FMWzaSw+d39Yx2y/iPLbOk5/OYtmXsf4eRllMYrZh5snxruqiOrnm5WQAQAe7R+Plur5xWajC5ly0kfKxmJaRvHiJK766y5e6jZWpt3HLotplHuHsbp3f7yvY0/IAAAD2wqZvVfLuDi/2MxtpXQhsz9rU+Uv3b1FtZ0ft3Hyd3ubYBEyAMCw/tvR0gNC5urH8Rdva1qfTmIsZACAgQ0eMvHpNA52yqje9kdT3Ye/L9v7hQwAMLCtkCmK4t70gfHQkGldLuv4pmyf8Ww3ynI3xj/UcSBkAICB3YXMU7i+2jpgAgAY1JOGDADA04n4E+A8j4fovWUaAAAAAElFTkSuQmCC" InformativeScreenshot="fa485e30b60ff4e0aed3b02a299c41a0.png" Reference="p1EvD9vpsUy_MQ6iaaaFaw/zaR-wnRIQ0qBtHeEDcaxyQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Rpa Challenge' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="ae539b48-a95f-4489-92cf-c730fbe9a055" CvElementArea="752, 466, 565, 40" CvType="InputBox" DesignTimeRectangle="756, 477, 32, 17" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Email' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Email' tag='LABEL' type='' class='' check:text='Email' /&gt;" Guid="e2793f03-1c84-4c61-a21f-44c2aad0c8ad" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACQAAAAVCAYAAAAuJkyQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAsSURBVEhL7c4xAQAgAAQh+5d+G3irAyTg7DNCRagIFaEiVISKUBEqQkXobbttP8TW4ZrajwAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NTypeInto.Target>
+                            <uix:NTypeInto.VerifyOptions>
+                              <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                                <uix:VerifyExecutionTypeIntoOptions.Retry>
+                                  <InArgument x:TypeArguments="x:Boolean" />
+                                </uix:VerifyExecutionTypeIntoOptions.Retry>
+                                <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                              </uix:VerifyExecutionTypeIntoOptions>
+                            </uix:NTypeInto.VerifyOptions>
+                          </uix:NTypeInto>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,554" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message Invalid Email Address" sap:VirtualizedContainerService.HintSize="382,175" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Error" Message="[&quot;Invalid Email Address&quot;]" />
+                          <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="I've added this activity just to complete the submission of data" ClickBeforeMode="Single" DisplayName="Type Into 'Email'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,319" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="c44e0e54-2b7c-4ab5-9f05-5472dceca279" Text="[CurrentRow(&quot;Email&quot;).ToString]" Version="V4">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable CVScreenId="ae539b48-a95f-4489-92cf-c730fbe9a055" ContentHash="oeeCmxn_L0ywiytC0R3e2w" CvTextArea="754, 531, 34, 12" CvTextArgument="Email" CvType="Text" DesignTimeRectangle="756, 496, 558, 46" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='OzlGm' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='OzlGm' tag='INPUT' type='' class='ng-untouched ng-pristine ng-invalid' aaname='' /&gt;" Guid="f944a88d-d08a-4c57-ba75-b6be7ae05b05" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAjIAAAAyCAYAAABGUzFwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKtSURBVHhe7dpha9tWFIDh/f8fISIaFhrDmLuAwOCSMlFDWGhG1g5/MJiZirlkjKSQkpFyJsVKFpeNLUFhHHgeOOaKK+vzi66+CgCApIQMAJCWkAEA0hIyAEBaQgYASEvIAABpCRkAIC0hAwCkJWQAgLSEDACQlpABANK6C5miKIwxxhhjUswtb2QAgLSEDACQlpABANISMgBAWkIGAEhLyAAAaQkZACAtIQMApCVkAIC0hAwAkJaQAQDSEjIAQFpCBgBIS8gAAGkJGQAgLSEDAKQlZACAtIQMAJCWkAEA0hIyAEBaQgYASEvIAABpCRkAIC0hAwCkJWQAgLSEDACQ1v8TMn9cx3W/BAB4rLuQufp1Hqc/nd6bVfze7w1rHfXzIkazs3a9iOnX0/YXAODh7kJm/XoU5f5BTCaTfo6j6feGdtksornsVu+iKqr2FwDg4bZCZvR63V/dcz6P+vt5rJdHMa2qqCaHcXJTIZfRvDmM6sU4qpdHsfy4uf3G54tYHk03QfTqJJqPqzie1DE/32w3x5M4ft+thAwA8Hj/HjIfZjHaKWL3u6NY/XYWqzeT2NsZxaQax7gNnOa8ifl0FMWzaSw+d39Yx2y/iPLbOk5/OYtmXsf4eRllMYrZh5snxruqiOrnm5WQAQAe7R+Plur5xWajC5ly0kfKxmJaRvHiJK766y5e6jZWpt3HLotplHuHsbp3f7yvY0/IAAAD2wqZvVfLuDi/2MxtpXQhsz9rU+Uv3b1FtZ0ft3Hyd3ubYBEyAMCw/tvR0gNC5urH8Rdva1qfTmIsZACAgQ0eMvHpNA52yqje9kdT3Ye/L9v7hQwAMLCtkCmK4t70gfHQkGldLuv4pmyf8Ww3ynI3xj/UcSBkAICB3YXMU7i+2jpgAgAY1JOGDADA04n4E+A8j4fovWUaAAAAAElFTkSuQmCC" InformativeScreenshot="fa485e30b60ff4e0aed3b02a299c41a0.png" Reference="p1EvD9vpsUy_MQ6iaaaFaw/zaR-wnRIQ0qBtHeEDcaxyQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Rpa Challenge' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="ae539b48-a95f-4489-92cf-c730fbe9a055" CvElementArea="752, 466, 565, 40" CvType="InputBox" DesignTimeRectangle="756, 477, 32, 17" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Email' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Email' tag='LABEL' type='' class='' check:text='Email' /&gt;" Guid="e2793f03-1c84-4c61-a21f-44c2aad0c8ad" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACQAAAAVCAYAAAAuJkyQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAsSURBVEhL7c4xAQAgAAQh+5d+G3irAyTg7DNCRagIFaEiVISKUBEqQkXobbttP8TW4ZrajwAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NTypeInto.Target>
+                            <uix:NTypeInto.VerifyOptions>
+                              <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                                <uix:VerifyExecutionTypeIntoOptions.Retry>
+                                  <InArgument x:TypeArguments="x:Boolean" />
+                                </uix:VerifyExecutionTypeIntoOptions.Retry>
+                                <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                              </uix:VerifyExecutionTypeIntoOptions>
+                            </uix:NTypeInto.VerifyOptions>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NTypeInto>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                    <ui:LogMessage DisplayName="Log Message Phone Number If Valid" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[&quot;Check If Phone Number is Valid&quot;]" />
+                    <ui:IsMatch sap2010:Annotation.AnnotationText="Check if Phone Number is 11 Digit Phone Number" BuilderPattern="^(?:\d{2}-\d{3}-\d{3}-\d{3}|\d{11})$" DisplayName="Check if Valid Phone Number RegEx" sap:VirtualizedContainerService.HintSize="434,123" sap2010:WorkflowViewState.IdRef="IsMatch_1" Input="[CurrentRow(&quot;Phone Number&quot;).ToString]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;^(?:\\d{2}-\\d{3}-\\d{3}-\\d{3}|\\d{11})$&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="^(?:\d{2}-\d{3}-\d{3}-\d{3}|\d{11})$" RegexOption="IgnoreCase, Compiled" Result="[boolPhoneNumberValid]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:IsMatch>
+                    <If Condition="[boolPhoneNumberValid]" DisplayName="If Valid Phone Number" sap:VirtualizedContainerService.HintSize="434,1204" sap2010:WorkflowViewState.IdRef="If_4">
+                      <If.Then>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,512" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message Input Phone Number" sap:VirtualizedContainerService.HintSize="382,175" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Input Phone Number&quot;]" />
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Phone Number'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,277" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="c44e0e54-2b7c-4ab5-9f05-5472dceca279" Text="[CurrentRow(&quot;Phone Number&quot;).ToString]" Version="V4">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable CVScreenId="ae539b48-a95f-4489-92cf-c730fbe9a055" ContentHash="NaiJ0nu8rkqJnBqyuR6F6Q" CvTextArea="755, 442, 90, 12" CvTextArgument="Phone Number" CvType="Text" DesignTimeRectangle="756, 408, 558, 46" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='mBFI4' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='mBFI4' tag='INPUT' type='' class='ng-untouched ng-pristine ng-invalid' aaname='' /&gt;" Guid="c0aa6938-1847-4828-9730-423cd17e0393" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAjIAAAAyCAYAAABGUzFwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAVISURBVHhe7dtxa9tGAIbxff8PIXJYRCzuvDn1EGg4OMTEIGrq4SbFpaYhJqbp3LnxIMUh4d2dJTmyk6YrSdbc9vxAYPki+eR//HBSfhAAAICnCBkAAOAtQgYAAHiLkAEAAN4iZAAAgLcIGQAA4C1CBgAAeIuQAQAA3iJkAACAtwgZAADgrWXIBEHAxsbGxsbGxubFVmBFBgAAeIuQAQAA3iJkAACAtwgZAADgLUIGAAB4i5ABAADeImQAAIC3CBkAAOAtQgYAAHiLkAEAAN4iZAAAgLcIGQAA4C1CBgAAeIuQAQAA3iJkAACAtwgZAADgLUIGAAB4i5ABAADeImQAAIC3CBkAAOAtQgYAAHiLkAEAAN4iZAAAgLcIGQAA4C1CBgAAeIuQAQAA3iJkAACAt5YhM38/UP9VP9sGI03OL/MRafKirvqLSb73/UyP+zr6M98pfBqp/+ZU83z3IT2V6wYAALdbhszpflVmq6EkSewWqxYaVdPT5Vh1P3v9PR3GgYJKU8Or/A3ndaxgq6PHmN1TuW4AAHC7lZBZ+dF+31ZkbDTYl9nYkcYvW4q364p3Uh39lf1ZYXbSU2sRQYlaL8eaFbFxNlB771Djd6macV31uKn03SwfzFz+0V8e20yPro9d40KmumWDq+lmlSuFzLibqD0on3umwV6i7km258a7x1Md7iaK41jN/YGm7rP+HKizY+e2bef+aqJiLar4TmZu7ov5tdQ7WZ27Libq2/MtAnDteyl/njsvAAB4WHeHzEaigX3pxoKNUI10pMnHkXpJtLIyMu3W7X7dRsRYk+O+2r8YBc/SbJXkQ0fVjUDh81SjjxONXib2vEZFi8zfJDL5sbPi3F9YYXEhEx+M1IoitUb5m6WQWYTOygrKqTpb9pjX2d5iRWejqqb7rLENLDtP8zxR41mi3vHEzj1VoxKo9mK6+Ht33aENp+qvHQ3Hdu6v2qrb8Xo3G9fngZKKUX1voPFZcW1VdT5kw+7zTFhVzQbO4P1j3PwCAOD/bSVkwjjNn5NJlUSBor2sFtyY+a20CiIbE5tFjAzVNKWwcK5cbOTjLmRMsnI7aLQb5qsqExsaRsnb7P2Mi4/r0ClbhIyLklFLUdTSyJ3zG0OmluYR4px1VQvC1bkfNBT83JVbd1kE3E+pSkdIb2145StVk87695J/V/nkb84HAAA8pFufkWnu9zQ4nt64xXKtFAguVIJYh9nA0vJH3I2vrbAsAiF2RxwqDtyqRahw83ozG/bYcnDkliFjjXYjRbu2QL4xZIrXGff51ysoC6X53rxuxx1TU/csO19gVuceVux7z7L4ufl5AADgIX351lLJnSHzuad6UFfvczaSmau3Haj++/wrIeNWdiK1hjPNzla384vsb8tWwmCx6mOP3W3cGTLtH+8XMusrLvqUqpaHm1tZilrDG3Of5f/xRcgAAPC47h8yNlr6z21A7Fw/pDs7iGWM/bF3cXNnyEjjvUjGvi6OvRy3Vd2oqfsp2y+7EQbuFlMQLENm5p7V2WprnEfQ+Ws7Dzt+n5Bxz9S0x/na1NXMnsMs5rt44uWkrahir7N4wPdirLb9XopnbAgZAAAe1wOEjGV/wNPt0P7oG4XGhsVmQ2nx4/+VkNHVVIfuAV937KaNBFNV8+15NrbmtjAYNs0yZNy5enE+j4rdtptq3HNFprrTU8dem6lkt7zC7XQZSs70wD3gG8i4W2LG2L8fqpg9IQMAwONahsyDuJprfsstoX/mUvOn/I89F/baSg8sr7t80pMHAOC/6WFDBgAA4F9EyAAAAE9JfwP8weXROZzz3wAAAABJRU5ErkJggg==" InformativeScreenshot="6f789df8b9c2c2e4153ecae1fb850e0d.png" Reference="p1EvD9vpsUy_MQ6iaaaFaw/viot6HjgYEy3Ias5IBO1pQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Rpa Challenge' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="ae539b48-a95f-4489-92cf-c730fbe9a055" CvElementArea="752, 379, 564, 38" CvType="InputBox" DesignTimeRectangle="756, 388, 89, 17" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Phone Number' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Phone Number' tag='LABEL' type='' class='' check:text='Phone Number' /&gt;" Guid="8cbfdc3d-d8d0-4be8-969c-98a5743ea524" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF0AAAAVCAYAAAAkeuLCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABDSURBVFhH7dAxAQAwEAOh+jeduvhbQAJvnJMekB6QHpAekB6QHpAekB6QHpAekB6QHpAekB6QHpAekB6QHpAekH5u+/clZz+XiQX8AAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NTypeInto.Target>
+                            <uix:NTypeInto.VerifyOptions>
+                              <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                                <uix:VerifyExecutionTypeIntoOptions.Retry>
+                                  <InArgument x:TypeArguments="x:Boolean" />
+                                </uix:VerifyExecutionTypeIntoOptions.Retry>
+                                <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                              </uix:VerifyExecutionTypeIntoOptions>
+                            </uix:NTypeInto.VerifyOptions>
+                          </uix:NTypeInto>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,554" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message Invalid Phone Number" sap:VirtualizedContainerService.HintSize="382,175" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Error" Message="[&quot;Invalid Phone Number&quot;]" />
+                          <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="I've added this activity just to complete the submission of data" ClickBeforeMode="Single" DisplayName="Type Into 'Phone Number'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,319" sap2010:WorkflowViewState.IdRef="NTypeInto_9" ScopeIdentifier="c44e0e54-2b7c-4ab5-9f05-5472dceca279" Text="[CurrentRow(&quot;Phone Number&quot;).ToString]" Version="V4">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable CVScreenId="ae539b48-a95f-4489-92cf-c730fbe9a055" ContentHash="NaiJ0nu8rkqJnBqyuR6F6Q" CvTextArea="755, 442, 90, 12" CvTextArgument="Phone Number" CvType="Text" DesignTimeRectangle="756, 408, 558, 46" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='mBFI4' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='mBFI4' tag='INPUT' type='' class='ng-untouched ng-pristine ng-invalid' aaname='' /&gt;" Guid="c0aa6938-1847-4828-9730-423cd17e0393" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAjIAAAAyCAYAAABGUzFwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAVISURBVHhe7dtxa9tGAIbxff8PIXJYRCzuvDn1EGg4OMTEIGrq4SbFpaYhJqbp3LnxIMUh4d2dJTmyk6YrSdbc9vxAYPki+eR//HBSfhAAAICnCBkAAOAtQgYAAHiLkAEAAN4iZAAAgLcIGQAA4C1CBgAAeIuQAQAA3iJkAACAtwgZAADgrWXIBEHAxsbGxsbGxubFVmBFBgAAeIuQAQAA3iJkAACAtwgZAADgLUIGAAB4i5ABAADeImQAAIC3CBkAAOAtQgYAAHiLkAEAAN4iZAAAgLcIGQAA4C1CBgAAeIuQAQAA3iJkAACAtwgZAADgLUIGAAB4i5ABAADeImQAAIC3CBkAAOAtQgYAAHiLkAEAAN4iZAAAgLcIGQAA4C1CBgAAeIuQAQAA3iJkAACAt5YhM38/UP9VP9sGI03OL/MRafKirvqLSb73/UyP+zr6M98pfBqp/+ZU83z3IT2V6wYAALdbhszpflVmq6EkSewWqxYaVdPT5Vh1P3v9PR3GgYJKU8Or/A3ndaxgq6PHmN1TuW4AAHC7lZBZ+dF+31ZkbDTYl9nYkcYvW4q364p3Uh39lf1ZYXbSU2sRQYlaL8eaFbFxNlB771Djd6macV31uKn03SwfzFz+0V8e20yPro9d40KmumWDq+lmlSuFzLibqD0on3umwV6i7km258a7x1Md7iaK41jN/YGm7rP+HKizY+e2bef+aqJiLar4TmZu7ov5tdQ7WZ27Libq2/MtAnDteyl/njsvAAB4WHeHzEaigX3pxoKNUI10pMnHkXpJtLIyMu3W7X7dRsRYk+O+2r8YBc/SbJXkQ0fVjUDh81SjjxONXib2vEZFi8zfJDL5sbPi3F9YYXEhEx+M1IoitUb5m6WQWYTOygrKqTpb9pjX2d5iRWejqqb7rLENLDtP8zxR41mi3vHEzj1VoxKo9mK6+Ht33aENp+qvHQ3Hdu6v2qrb8Xo3G9fngZKKUX1voPFZcW1VdT5kw+7zTFhVzQbO4P1j3PwCAOD/bSVkwjjNn5NJlUSBor2sFtyY+a20CiIbE5tFjAzVNKWwcK5cbOTjLmRMsnI7aLQb5qsqExsaRsnb7P2Mi4/r0ClbhIyLklFLUdTSyJ3zG0OmluYR4px1VQvC1bkfNBT83JVbd1kE3E+pSkdIb2145StVk87695J/V/nkb84HAAA8pFufkWnu9zQ4nt64xXKtFAguVIJYh9nA0vJH3I2vrbAsAiF2RxwqDtyqRahw83ozG/bYcnDkliFjjXYjRbu2QL4xZIrXGff51ysoC6X53rxuxx1TU/csO19gVuceVux7z7L4ufl5AADgIX351lLJnSHzuad6UFfvczaSmau3Haj++/wrIeNWdiK1hjPNzla384vsb8tWwmCx6mOP3W3cGTLtH+8XMusrLvqUqpaHm1tZilrDG3Of5f/xRcgAAPC47h8yNlr6z21A7Fw/pDs7iGWM/bF3cXNnyEjjvUjGvi6OvRy3Vd2oqfsp2y+7EQbuFlMQLENm5p7V2WprnEfQ+Ws7Dzt+n5Bxz9S0x/na1NXMnsMs5rt44uWkrahir7N4wPdirLb9XopnbAgZAAAe1wOEjGV/wNPt0P7oG4XGhsVmQ2nx4/+VkNHVVIfuAV937KaNBFNV8+15NrbmtjAYNs0yZNy5enE+j4rdtptq3HNFprrTU8dem6lkt7zC7XQZSs70wD3gG8i4W2LG2L8fqpg9IQMAwONahsyDuJprfsstoX/mUvOn/I89F/baSg8sr7t80pMHAOC/6WFDBgAA4F9EyAAAAE9JfwP8weXROZzz3wAAAABJRU5ErkJggg==" InformativeScreenshot="6f789df8b9c2c2e4153ecae1fb850e0d.png" Reference="p1EvD9vpsUy_MQ6iaaaFaw/viot6HjgYEy3Ias5IBO1pQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Rpa Challenge' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="ae539b48-a95f-4489-92cf-c730fbe9a055" CvElementArea="752, 379, 564, 38" CvType="InputBox" DesignTimeRectangle="756, 388, 89, 17" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Phone Number' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Phone Number' tag='LABEL' type='' class='' check:text='Phone Number' /&gt;" Guid="8cbfdc3d-d8d0-4be8-969c-98a5743ea524" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF0AAAAVCAYAAAAkeuLCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABDSURBVFhH7dAxAQAwEAOh+jeduvhbQAJvnJMekB6QHpAekB6QHpAekB6QHpAekB6QHpAekB6QHpAekB6QHpAekH5u+/clZz+XiQX8AAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NTypeInto.Target>
+                            <uix:NTypeInto.VerifyOptions>
+                              <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                                <uix:VerifyExecutionTypeIntoOptions.Retry>
+                                  <InArgument x:TypeArguments="x:Boolean" />
+                                </uix:VerifyExecutionTypeIntoOptions.Retry>
+                                <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                              </uix:VerifyExecutionTypeIntoOptions>
+                            </uix:NTypeInto.VerifyOptions>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NTypeInto>
+                        </Sequence>
+                      </If.Else>
+                    </If>
                     <ui:LogMessage DisplayName="Log Message Click Submit" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Click Submit&quot;]" />
                     <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Submit'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,216" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c44e0e54-2b7c-4ab5-9f05-5472dceca279" Version="V4">
                       <uix:NClick.Target>
