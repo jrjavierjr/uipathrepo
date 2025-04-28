@@ -42,6 +42,7 @@
       <x:String>System.Xml.Serialization</x:String>
       <x:String>System.Xml.Serialization</x:String>
       <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.Testing.Activities.Models</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -103,7 +104,7 @@
       <AssemblyReference>CloudMarc.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TestCase" sap:VirtualizedContainerService.HintSize="1916,2624" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TestCase" sap:VirtualizedContainerService.HintSize="1916,2685" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strURL" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtExcelFile" />
@@ -226,15 +227,15 @@
         </TryCatch.Finally>
       </TryCatch>
     </Sequence>
-    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="568,805" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="568,835" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="418,713" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="418,743" sap2010:WorkflowViewState.IdRef="TryCatch_2">
         <TryCatch.Try>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Perform RPA Challenge&#xD;&#xA;&#xD;&#xA;Input First Name, Last Name, Company, Role in Company, Address, Email and Phone Number&#xD;&#xA;&#xD;&#xA;Check Phone Number if Valid(11 Digits)&#xD;&#xA;Check Email Address if Valid&#xD;&#xA;&#xD;&#xA;If Valid&#xD;&#xA;Input Phone Number&#xD;&#xA;Input Email Address&#xD;&#xA;Submit data&#xD;&#xA;&#xD;&#xA;If Not Valid&#xD;&#xA;Display Log Message Invalid Phone Number&#xD;&#xA;Display Log Message Invalid Email Address&#xD;&#xA;It will still input the data then submit" DisplayName="RPAChallenge - Invoke Workflow File (Framework\RPAChallenge.xaml)" sap:VirtualizedContainerService.HintSize="416,412" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Framework\RPAChallenge.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Perform RPA Challenge&#xA;&#xA;Input First Name, Last Name, Company, Role in Company, Address, Email and Phone Number&#xA;&#xA;Check Phone Number if Valid(11 Digits)&#xA;Check Email Address if Valid&#xA;&#xA;If Valid&#xA;Input Phone Number&#xA;Input Email Address&#xA;Submit data&#xA;&#xA;If Not Valid&#xA;Display Log Message Invalid Phone Number&#xA;Display Log Message Invalid Email Address&#xA;&#xD;&#xA;It will still input the data because no clear handling for invalid Phone Number and Email Address" DisplayName="RPAChallenge - Invoke Workflow File (Framework\RPAChallenge.xaml)" sap:VirtualizedContainerService.HintSize="416,442" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Framework\RPAChallenge.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtExcelFile">[dtExcelFile]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_strURL">[strURL]</InArgument>
@@ -300,13 +301,13 @@
         </TryCatch.Finally>
       </TryCatch>
     </Sequence>
-    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="568,531" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="568,562" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uta:VerifyControlAttribute AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Control Attribute" sap:VirtualizedContainerService.HintSize="534,249" sap2010:WorkflowViewState.IdRef="VerifyControlAttribute_4" Operator="Equality" OutputArgument="Value" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+      <uta:VerifyControlAttribute AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" sap2010:Annotation.AnnotationText="Validate word &quot;Congratulations!&quot;" ContinueOnFailure="True" DisplayName="Verify Control Attribute" sap:VirtualizedContainerService.HintSize="534,280" sap2010:WorkflowViewState.IdRef="VerifyControlAttribute_4" Operator="Equality" OutputArgument="Value" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
         <uta:VerifyControlAttribute.ActivityToTest>
           <ActivityAction>
             <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Congratulations!" sap:VirtualizedContainerService.HintSize="500,107" sap2010:WorkflowViewState.IdRef="GetValue_1">
@@ -346,6 +347,11 @@
         <uta:VerifyControlAttribute.Expression>
           <InArgument x:TypeArguments="x:String">["Congratulations!"]</InArgument>
         </uta:VerifyControlAttribute.Expression>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
       </uta:VerifyControlAttribute>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Close Google Chrome if Open" DisplayName="CloseApplications - Invoke Workflow File (Framework\CloseApplications.xaml)" sap:VirtualizedContainerService.HintSize="534,199" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Framework\CloseApplications.xaml">
         <ui:InvokeWorkflowFile.Arguments>
